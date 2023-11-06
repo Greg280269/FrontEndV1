@@ -1,13 +1,18 @@
 <mat-toolbar color="primary">
   <mat-icon>menu</mat-icon>
-  <button mat-button [matMenuTriggerFor]="menuPostres">Comprobante</button>
+  <button mat-button [matMenuTriggerFor]="menuTipoComp">Tipo Comprobante</button>
+  <button mat-button [matMenuTriggerFor]="menuServicios">Servicios</button>
   
 </mat-toolbar>
 
-<mat-menu #menuPostres="matMenu">
+<mat-menu #menuTipoComp="matMenu">
   <button mat-menu-item routerLink="/tipo_comprobante/nuevo">Registrar</button>
   <button mat-menu-item routerLink="/tipo_comprobante">Listar</button>
+</mat-menu>
 
+<mat-menu #menuServicios="matMenu">
+  <button mat-menu-item routerLink="/servicio_disponible/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="/servicio_disponible">Listar</button>
 </mat-menu>
 
 <router-outlet></router-outlet>

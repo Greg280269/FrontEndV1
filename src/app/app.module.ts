@@ -21,6 +21,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input'
 import { HttpClientModule } from '@angular/common/http';
 import { CreaeditaComprobanteComponent } from './component/comprobante/creaedita-comprobante/creaedita-comprobante.component';
+import { ServiciosComponent } from './component/servicios/servicios.component';
+import { ListarServiciosComponent } from './component/servicios/listar-servicios/listar-servicios.component';
+import { CreaeditaServiciosComponent } from './component/servicios/creaedita-servicios/creaedita-servicios.component';
 
 
 @NgModule({
@@ -28,7 +31,10 @@ import { CreaeditaComprobanteComponent } from './component/comprobante/creaedita
     AppComponent,
     ComprobanteComponent,
     ListarComprobanteComponent,
-    CreaeditaComprobanteComponent
+    CreaeditaComprobanteComponent,
+    ServiciosComponent,
+    ListarServiciosComponent,
+    CreaeditaServiciosComponent
   ],
   imports: [
     BrowserModule,
