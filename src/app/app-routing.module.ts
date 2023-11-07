@@ -6,6 +6,9 @@ import { ServiciosComponent } from './component/servicios/servicios.component';
 import { CreaeditaServiciosComponent } from './component/servicios/creaedita-servicios/creaedita-servicios.component';
 import { UsersComponent } from './component/users/users.component';
 import { CreaeditaUsersComponent } from './component/users/creaedita-users/creaedita-users.component';
+import { RolesComponent } from './component/roles/roles.component';
+import { CreaeditaRolesComponent } from './component/roles/creaedita-roles/creaedita-roles.component';
+
 
 const routes: Routes = [
   {
@@ -30,6 +33,14 @@ const routes: Routes = [
     children:[
       {path:'nuevo',component:CreaeditaUsersComponent},
       {path:'ediciones/:id',component:CreaeditaUsersComponent}
+    ]
+  },
+  {
+    path: 'roles',
+    component:RolesComponent,
+    children:[
+      {path:'nuevo',component:CreaeditaRolesComponent},
+      {path:'ediciones/:id',component:CreaeditaRolesComponent}
     ]
   }
 ];
