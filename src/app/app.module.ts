@@ -24,6 +24,9 @@ import { CreaeditaComprobanteComponent } from './component/comprobante/creaedita
 import { ServiciosComponent } from './component/servicios/servicios.component';
 import { ListarServiciosComponent } from './component/servicios/listar-servicios/listar-servicios.component';
 import { CreaeditaServiciosComponent } from './component/servicios/creaedita-servicios/creaedita-servicios.component';
+import { UsersComponent } from './component/users/users.component';
+import { ListarUsersComponent } from './component/users/listar-users/listar-users.component';
+import { CreaeditaUsersComponent } from './component/users/creaedita-users/creaedita-users.component';
 
 
 @NgModule({
@@ -34,7 +37,10 @@ import { CreaeditaServiciosComponent } from './component/servicios/creaedita-ser
     CreaeditaComprobanteComponent,
     ServiciosComponent,
     ListarServiciosComponent,
-    CreaeditaServiciosComponent
+    CreaeditaServiciosComponent,
+    UsersComponent,
+    ListarUsersComponent,
+    CreaeditaUsersComponent
   ],
   imports: [
     BrowserModule,

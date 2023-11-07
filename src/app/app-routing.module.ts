@@ -4,6 +4,8 @@ import { ComprobanteComponent } from './component/comprobante/comprobante.compon
 import { CreaeditaComprobanteComponent } from './component/comprobante/creaedita-comprobante/creaedita-comprobante.component';
 import { ServiciosComponent } from './component/servicios/servicios.component';
 import { CreaeditaServiciosComponent } from './component/servicios/creaedita-servicios/creaedita-servicios.component';
+import { UsersComponent } from './component/users/users.component';
+import { CreaeditaUsersComponent } from './component/users/creaedita-users/creaedita-users.component';
 
 const routes: Routes = [
   {
@@ -20,6 +22,14 @@ const routes: Routes = [
     children:[
       {path:'nuevo',component:CreaeditaServiciosComponent},
       {path:'ediciones/:id',component:CreaeditaServiciosComponent}
+    ]
+  },
+  {
+    path: 'usuarios',
+    component:UsersComponent,
+    children:[
+      {path:'nuevo',component:CreaeditaUsersComponent},
+      {path:'ediciones/:id',component:CreaeditaUsersComponent}
     ]
   }
 ];

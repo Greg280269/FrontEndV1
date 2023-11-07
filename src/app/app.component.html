@@ -2,6 +2,7 @@
   <mat-icon>menu</mat-icon>
   <button mat-button [matMenuTriggerFor]="menuTipoComp">Tipo Comprobante</button>
   <button mat-button [matMenuTriggerFor]="menuServicios">Servicios</button>
+  <button mat-button [matMenuTriggerFor]="menuUsers">Usuarios</button>
   
 </mat-toolbar>
 
@@ -13,6 +14,11 @@
 <mat-menu #menuServicios="matMenu">
   <button mat-menu-item routerLink="/servicio_disponible/nuevo">Registrar</button>
   <button mat-menu-item routerLink="/servicio_disponible">Listar</button>
+</mat-menu>
+
+<mat-menu #menuUsers="matMenu">
+  <button mat-menu-item routerLink="/usuarios/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="/usuarios">Listar</button>
 </mat-menu>
 
 <router-outlet></router-outlet>
