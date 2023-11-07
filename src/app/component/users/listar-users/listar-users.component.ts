@@ -18,8 +18,9 @@ export class ListarUsersComponent {
     'apellido',
     'email',
     'telefono',
-    'enable'
-
+    'enable',
+    'accion01',
+    'accion02'
     
   ];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
