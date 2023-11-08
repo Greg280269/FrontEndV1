@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { TipoComprobante } from '../model/TipoComprobante';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const base_url =environment.base
 
@@ -17,11 +17,21 @@ export class ComprobanteService {
   constructor(private http:HttpClient) { }
 
   list(){
-    return this.http.get<TipoComprobante[]>(this.url);
+    let token = sessionStorage.getItem('token');
+    return this.http.get<TipoComprobante[]>(this.url, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 
   insert(per:TipoComprobante){
-    return this.http.post(this.url,per);
+    let token = sessionStorage.getItem('token');
+    return this.http.post(this.url,per, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 
   setList(listaNueva:TipoComprobante[]){
@@ -33,14 +43,29 @@ export class ComprobanteService {
   }
 
   listId(id:number){
-    return this.http.get<TipoComprobante>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem('token');
+    return this.http.get<TipoComprobante>(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 
   update(c:TipoComprobante){
-    return this.http.put(this.url,c);
+    let token = sessionStorage.getItem('token');
+    return this.http.put(this.url,c, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 
   delete(id:number){
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem('token');
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 }
