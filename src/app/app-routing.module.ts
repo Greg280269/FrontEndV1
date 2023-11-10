@@ -1,17 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ComprobanteComponent } from './component/comprobante/comprobante.component';
-import { CreaeditaComprobanteComponent } from './component/comprobante/creaedita-comprobante/creaedita-comprobante.component';
+import { LoginComponent } from './component/login/login.component';
+
+
 
 const routes: Routes = [
   {
-    path: 'tipo_comprobante',
-    component:ComprobanteComponent,
-    children:[
-      {path:'nuevo',component:CreaeditaComprobanteComponent},
-      {path: 'ediciones/:id',component:CreaeditaComprobanteComponent},
-    ]
-  }
+    path: '',
+    redirectTo: 'login', pathMatch: 'full'
+  },
+  {
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'components',
+    loadChildren: () => import('./component/component.module').then((m) => m.ComponentModule),
+  },
 ];
 
 @NgModule({

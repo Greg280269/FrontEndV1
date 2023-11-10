@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { TipoComprobante } from '../model/TipoComprobante';
+import { Users } from '../model/Users';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const base_url =environment.base
@@ -9,32 +9,34 @@ const base_url =environment.base
 @Injectable({
   providedIn: 'root'
 })
-export class ComprobanteService {
+export class UsersService {
 
-  private url = `${base_url}/tipo_comprobante`
-  private listaCambio = new Subject<TipoComprobante[]>()
+  private url = `${base_url}/usuarios`
+  private listaCambio = new Subject<Users[]>()
 
   constructor(private http:HttpClient) { }
 
+
   list(){
     let token = sessionStorage.getItem('token');
-    return this.http.get<TipoComprobante[]>(this.url, {
+    return this.http.get<Users[]>(this.url, {
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
     });
   }
 
-  insert(per:TipoComprobante){
+  insert(per:Users){
     let token = sessionStorage.getItem('token');
     return this.http.post(this.url,per, {
+      
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
     });
   }
 
-  setList(listaNueva:TipoComprobante[]){
+  setList(listaNueva:Users[]){
     this.listaCambio.next(listaNueva);
   }
 
@@ -44,14 +46,14 @@ export class ComprobanteService {
 
   listId(id:number){
     let token = sessionStorage.getItem('token');
-    return this.http.get<TipoComprobante>(`${this.url}/${id}`, {
+    return this.http.get<Users>(`${this.url}/${id}`, {
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
     });
   }
 
-  update(c:TipoComprobante){
+  update(c:Users){
     let token = sessionStorage.getItem('token');
     return this.http.put(this.url,c, {
       headers: new HttpHeaders()

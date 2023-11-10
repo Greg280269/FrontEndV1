@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { TipoComprobante } from '../model/TipoComprobante';
+import { Servicios } from '../model/Servicios';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const base_url =environment.base
@@ -9,24 +9,25 @@ const base_url =environment.base
 @Injectable({
   providedIn: 'root'
 })
-export class ComprobanteService {
+export class ServiciosService {
 
-  private url = `${base_url}/tipo_comprobante`
-  private listaCambio = new Subject<TipoComprobante[]>()
+  private url = `${base_url}/Servicios Disponibles`
+  private listaCambio = new Subject<Servicios[]>()
 
   constructor(private http:HttpClient) { }
 
   list(){
     let token = sessionStorage.getItem('token');
-    return this.http.get<TipoComprobante[]>(this.url, {
+    return this.http.get<Servicios[]>(this.url, {
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
     });
   }
 
-  insert(per:TipoComprobante){
+  insert(per:Servicios){
     let token = sessionStorage.getItem('token');
+
     return this.http.post(this.url,per, {
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
@@ -34,7 +35,7 @@ export class ComprobanteService {
     });
   }
 
-  setList(listaNueva:TipoComprobante[]){
+  setList(listaNueva:Servicios[]){
     this.listaCambio.next(listaNueva);
   }
 
@@ -44,14 +45,14 @@ export class ComprobanteService {
 
   listId(id:number){
     let token = sessionStorage.getItem('token');
-    return this.http.get<TipoComprobante>(`${this.url}/${id}`, {
+    return this.http.get<Servicios>(`${this.url}/${id}`, {
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
     });
   }
 
-  update(c:TipoComprobante){
+  update(c:Servicios){
     let token = sessionStorage.getItem('token');
     return this.http.put(this.url,c, {
       headers: new HttpHeaders()
