@@ -58,7 +58,7 @@ export class CreaeditaComprobanteComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['tipo_comprobante']);
+      this.router.navigate(['/components/tipo_comprobante']);
     } else{
       this.mensaje='Complete todos los campos, revise!!';
     }

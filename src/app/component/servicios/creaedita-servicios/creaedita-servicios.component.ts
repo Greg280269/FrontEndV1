@@ -67,7 +67,7 @@ export class CreaeditaServiciosComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['servicio_disponible']);
+      this.router.navigate(['/components/servicio_disponible']);
     } else{
       this.mensaje='Complete todos los campos, revise!!';
     }

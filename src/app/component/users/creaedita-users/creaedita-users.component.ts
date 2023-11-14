@@ -73,7 +73,7 @@ export class CreaeditaUsersComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['usuarios']);
+      this.router.navigate(['/components/usuarios']);
     } else{
       this.mensaje='Complete todos los campos, revise!!';
     }

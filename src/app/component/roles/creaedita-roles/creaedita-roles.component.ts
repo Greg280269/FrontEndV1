@@ -71,7 +71,7 @@ export class CreaeditaRolesComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['roles']);
+      this.router.navigate(['/components/roles']);
     } else{
       this.mensaje='Complete todos los campos, revise!!';
     }
