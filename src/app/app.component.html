@@ -3,6 +3,9 @@
   <button mat-button [matMenuTriggerFor]="menuTipoComp">Tipo Comprobante</button>
   <button mat-button [matMenuTriggerFor]="menuServicios" *ngIf="validarRol()">Servicios</button>
   <button mat-button [matMenuTriggerFor]="menuUsers">Usuarios</button>
+  <button mat-button [matMenuTriggerFor]="menuComentarios">Cometnarios</button>
+  <button mat-button [matMenuTriggerFor]="menuEventos">Eventos</button>
+  <button mat-button [matMenuTriggerFor]="menuULocales">Locales</button>
   <button mat-button [matMenuTriggerFor]="menuRoles">Roles</button>
   <button mat-button [matMenuTriggerFor]="menuSalir">Usuario</button>
 </mat-toolbar>
@@ -20,6 +23,21 @@
 <mat-menu #menuUsers="matMenu">
   <button mat-menu-item routerLink="components/usuarios/nuevo">Registrar</button>
   <button mat-menu-item routerLink="components/usuarios">Listar</button>
+</mat-menu>
+
+<mat-menu #menuComentarios="matMenu">
+  <button mat-menu-item routerLink="components/comentarios/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="components/comentarios">Listar</button>
+</mat-menu>
+
+<mat-menu #menuEventos="matMenu">
+  <button mat-menu-item routerLink="components/eventos/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="components/eventos">Listar</button>
+</mat-menu>
+
+<mat-menu #menuULocales="matMenu">
+  <button mat-menu-item routerLink="components/locales/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="components/locales">Listar</button>
 </mat-menu>
 
 <mat-menu #menuRoles="matMenu">

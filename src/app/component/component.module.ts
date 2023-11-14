@@ -34,6 +34,15 @@ import { CreaeditaRolesComponent } from './roles/creaedita-roles/creaedita-roles
 import { ComprobanteComponent } from './comprobante/comprobante.component';
 import { ListarComprobanteComponent } from './comprobante/listar-comprobante/listar-comprobante.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ComentarioComponent } from './comentario/comentario.component';
+import { LocalComponent } from './local/local.component';
+import { EventoComponent } from './evento/evento.component';
+import { ListarEventoComponent } from './evento/listar-evento/listar-evento.component';
+import { CreaeditaEventoComponent } from './evento/creaedita-evento/creaedita-evento.component';
+import { ListarLocalComponent } from './local/listar-local/listar-local.component';
+import { CreaeditaLocalComponent } from './local/creaedita-local/creaedita-local.component';
+import { CreaeditaComentarioComponent } from './comentario/creaedita-comentario/creaedita-comentario.component';
+import { ListarComentarioComponent } from './comentario/listar-comentario/listar-comentario.component';
 
 
 
@@ -54,6 +63,15 @@ import { HttpClientModule } from '@angular/common/http';
     RolesComponent,
     ListarRolesComponent,
     CreaeditaRolesComponent,
+    ComentarioComponent,
+    LocalComponent,
+    EventoComponent,
+    ListarEventoComponent,
+    CreaeditaEventoComponent,
+    ListarLocalComponent,
+    CreaeditaLocalComponent,
+    CreaeditaComentarioComponent,
+    ListarComentarioComponent,
     
   ],
   imports: [

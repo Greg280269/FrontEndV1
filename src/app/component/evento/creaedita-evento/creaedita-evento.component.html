@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container" style="text-align: center;">
+        <h2>Registro de Eventos</h2>
+        <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+
+            <mat-form-field class="example-full-width" *ngIf="edicion">
+                <mat-label>id</mat-label>
+                <input matInput placeholder="Id" formControlName="id" />
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+              <mat-label>Nombre</mat-label>
+              <input matInput required placeholder="Por favor ingrese el contenido" type="text"  name="nombre" formControlName="nombre" required>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+              <mat-label>Descripcion</mat-label>
+              <input matInput required placeholder="Por favor ingrese el contenido" type="text"  name="descripcion" formControlName="descripcion" required>
+            </mat-form-field>
+            <br />
+            <mat-form-field appearance="fill" class="example-full-width">
+              <input
+                matInput
+                placeholder="Ingrese fecha"
+                [matDatepicker]="picker"
+                formControlName="fecha"
+                [max]="maxFecha"
+              />
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle
+                matIconSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+              <mat-error
+                *ngIf="obtenerControlCampo('fecha')?.errors?.['required']"
+              >
+              </mat-error>
+            </mat-form-field>
+            <br />
+            <mat-form-field appearance="fill" class="example-full-width">
+              <input
+                matInput
+                placeholder="Ingrese hora (HH:MM)"
+                formControlName="hora"
+                [pattern]="horaPattern"
+              />
+              <mat-hint>HH:MM (24 horas)</mat-hint>
+              <mat-error *ngIf="obtenerControlCampo('hora')?.hasError('pattern')">
+                Ingrese una hora válida en formato HH:MM.
+              </mat-error>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+              <mat-label>Capacidad</mat-label>
+              <input matInput required placeholder="Por favor ingrese el contenido" type="text"  name="capacidad" formControlName="capacidad" required>
+            </mat-form-field>
+            <br />
+            <mat-form-field class="example-full-width">
+              <mat-label>Costo</mat-label>
+              <input matInput required placeholder="Por favor ingrese el contenido" type="text"  name="costo" formControlName="costo" required>
+            </mat-form-field>
+            <br />
+            <button mat-raised-button color="primary">Aceptar</button>
+            <button mat-raised-button color="warn" routerLink="/components/eventos">
+                Cancelar
+            </button>
+            <p>{{ mensaje }}</p>
+        </form>
+    </div>
+</body>
+
+</html>
