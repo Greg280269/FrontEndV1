@@ -1,18 +1,21 @@
-import { Component, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 import { Local } from 'src/app/model/local';
 import { LocalService } from 'src/app/service/local.service';
+
 
 @Component({
   selector: 'app-listar-local',
   templateUrl: './listar-local.component.html',
   styleUrls: ['./listar-local.component.css']
 })
-export class ListarLocalComponent {
-  dataSource: MatTableDataSource<Local> = new MatTableDataSource()
+export class ListarLocalComponent implements OnInit {
+  Lista: Local[] = [];
+  dataSource: MatTableDataSource<Local> = new MatTableDataSource();
   displayedColumns: string[] = [
-    'Codigo',
+    'CodigoLocal',
     'Nombre',
     'Direccion',
     'Capacidad',

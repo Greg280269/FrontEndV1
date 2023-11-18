@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Comentario } from '../model/comentario';
+import { Comentario } from '../model/comentarios';
 
 const base_url =environment.base
 

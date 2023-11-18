@@ -10,11 +10,13 @@ import {
 import { Local } from 'src/app/model/local';
 import { LocalService } from 'src/app/service/local.service';
 
+
 @Component({
   selector: 'app-creaedita-local',
   templateUrl: './creaedita-local.component.html',
   styleUrls: ['./creaedita-local.component.css']
 })
+
 export class CreaeditaLocalComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   local: Local = new Local();
@@ -63,7 +65,7 @@ export class CreaeditaLocalComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['locales']);
+      this.router.navigate(['components/locales']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

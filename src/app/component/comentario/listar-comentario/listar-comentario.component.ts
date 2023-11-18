@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { Comentario } from 'src/app/model/comentario';
+import { Comentario } from 'src/app/model/comentarios';
 import { ComentarioService } from 'src/app/service/comentario.service';
 @Component({
   selector: 'app-listar-comentario',

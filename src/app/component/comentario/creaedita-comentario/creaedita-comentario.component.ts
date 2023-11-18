@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Comentario } from 'src/app/model/comentario';
+import { Comentario } from 'src/app/model/comentarios';
 import { ComentarioService } from 'src/app/service/comentario.service';
 
 
@@ -63,7 +63,7 @@ export class CreaeditaComentarioComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['comentarios']);
+      this.router.navigate(['components/comentarios']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
