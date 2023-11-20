@@ -7,7 +7,7 @@ import { LoginService } from './service/login.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AWSBD';
+  title = 'Frontend';
   role:string="";
 
   constructor(private loginService: LoginService) {

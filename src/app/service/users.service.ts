@@ -1,21 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { Users } from '../model/Users';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+import { Users } from '../model/Users';
+
 
 const base_url =environment.base
-
 @Injectable({
   providedIn: 'root'
 })
 export class UsersService {
 
-  private url = `${base_url}/usuarios`
+  private url = `${base_url}/users`
   private listaCambio = new Subject<Users[]>()
 
   constructor(private http:HttpClient) { }
-
 
   list(){
     let token = sessionStorage.getItem('token');
@@ -29,7 +28,6 @@ export class UsersService {
   insert(per:Users){
     let token = sessionStorage.getItem('token');
     return this.http.post(this.url,per, {
-      
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),

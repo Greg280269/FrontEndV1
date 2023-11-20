@@ -3,7 +3,6 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Roles } from 'src/app/model/Roles';
 import { RolesService } from 'src/app/service/roles.service';
-
 @Component({
   selector: 'app-listar-roles',
   templateUrl: './listar-roles.component.html',
@@ -12,13 +11,11 @@ import { RolesService } from 'src/app/service/roles.service';
 export class ListarRolesComponent {
   dataSource: MatTableDataSource<Roles> = new MatTableDataSource()
   displayedColumns: string[] = [
-    'codigo', 
-    'rol', 
+    'codigo',
+    'rol',
     'nombre',
     'accion01',
     'accion02'
-
-    
   ];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -32,7 +29,7 @@ export class ListarRolesComponent {
     this.pS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
-    }); 
+    });
   }
 
   eliminar(id: number){
@@ -41,5 +38,9 @@ export class ListarRolesComponent {
         this.pS.setList(data);
       });
     });
+  }
+
+  filtrar(e: any) {
+    this.dataSource.filter = e.target.value.trim();
   }
 }

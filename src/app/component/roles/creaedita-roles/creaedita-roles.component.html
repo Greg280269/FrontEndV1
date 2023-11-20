@@ -35,7 +35,7 @@
             <mat-form-field class="example-full-width">
                 <mat-label>Usuario</mat-label>
                 <mat-select [(value)]="idPersonaSeleccionada" formControlName="person">
-                    <mat-option *ngFor="let p of listaPersonas" [value]="p.idUser">
+                    <mat-option *ngFor="let p of listaPersonas" [value]="p.id">
                         {{p.username}}
                     </mat-option>
                 </mat-select>

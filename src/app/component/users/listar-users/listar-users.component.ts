@@ -12,8 +12,8 @@ import { UsersService } from 'src/app/service/users.service';
 export class ListarUsersComponent {
   dataSource: MatTableDataSource<Users> = new MatTableDataSource()
   displayedColumns: string[] = [
-    'codigo', 
-    'nombre', 
+    'codigo',
+    'nombre',
     'dni',
     'apellido',
     'email',
@@ -21,7 +21,7 @@ export class ListarUsersComponent {
     'enable',
     'accion01',
     'accion02'
-    
+
   ];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -35,7 +35,7 @@ export class ListarUsersComponent {
     this.pS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
-    }); 
+    });
   }
 
   eliminar(id: number){
@@ -54,4 +54,9 @@ export class ListarUsersComponent {
       return "Desactivado"
     }
   }
+
+  filtrar(e: any) {
+    this.dataSource.filter = e.target.value.trim();
+  }
+
 }

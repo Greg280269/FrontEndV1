@@ -45,12 +45,12 @@ export class CreaeditaUsersComponent implements OnInit{
       telefono:['',Validators.required],
       enabled:['',Validators.required],
       password:['',Validators.required],
-      
+
     });
   }
   Aceptar(){
     if(this.form.valid){
-      this.comp.idUser=this.form.value.id;
+      this.comp.id=this.form.value.id;
       this.comp.dni=this.form.value.dni;
       this.comp.username =this.form.value.username;
       this.comp.apellido=this.form.value.apellido;
@@ -73,14 +73,18 @@ export class CreaeditaUsersComponent implements OnInit{
           });
         });
       }
+<<<<<<< Updated upstream
       this.router.navigate(['/components/usuarios']);
+=======
+      this.router.navigate(['components/users']);
+>>>>>>> Stashed changes
     } else{
       this.mensaje='Complete todos los campos, revise!!';
     }
   }
 
   obtenerControlCampo(nombreCampo:string): AbstractControl{
-    const control = this.form.get(nombreCampo);  
+    const control = this.form.get(nombreCampo);
     if(!control){
       throw new Error (`Control no encontrado para el campo ${nombreCampo}`);
     }
@@ -91,7 +95,7 @@ export class CreaeditaUsersComponent implements OnInit{
     if (this.edicion) {
       this.ps.listId(this.idF).subscribe((data) => {
         this.form = new FormGroup({
-          id: new FormControl(data.idUser),
+          id: new FormControl(data.id),
           username: new FormControl(data.username),
           apellido: new FormControl(data.apellido),
           email: new FormControl(data.email),
@@ -104,3 +108,4 @@ export class CreaeditaUsersComponent implements OnInit{
     }
   }
 }
+

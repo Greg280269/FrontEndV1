@@ -1,12 +1,24 @@
 <mat-toolbar color="primary" *ngIf="verificar()">
   <mat-icon>menu</mat-icon>
+<<<<<<< Updated upstream
   <button mat-button [matMenuTriggerFor]="menuTipoComp">Tipo Comprobante</button>
   <button mat-button [matMenuTriggerFor]="menuServicios" *ngIf="validarRol()">Servicios</button>
   <button mat-button [matMenuTriggerFor]="menuUsers">Usuarios</button>
+=======
+  <button mat-button [matMenuTriggerFor]="menuComentarios">Comentarios</button>
+  <button mat-button [matMenuTriggerFor]="menuComprobantePago">Comprobante Pago</button>
+  <button mat-button [matMenuTriggerFor]="menuEventos">Eventos</button>
+  <button mat-button [matMenuTriggerFor]="menuULocales">Locales</button>
+>>>>>>> Stashed changes
   <button mat-button [matMenuTriggerFor]="menuRoles">Roles</button>
-  <button mat-button [matMenuTriggerFor]="menuSalir">Usuario</button>
+  <button mat-button [matMenuTriggerFor]="menuServicios">Servicios</button>
+  <button mat-button [matMenuTriggerFor]="menuTipoComprobante">Tipo Comprobante</button>
+  <button mat-button [matMenuTriggerFor]="menuUsers">Usuarios</button>
+  <button mat-button [matMenuTriggerFor]="menuReporte">Reportes</button>
+  <button mat-button [matMenuTriggerFor]="menuSalir">Salir</button>
 </mat-toolbar>
 
+<<<<<<< Updated upstream
 <mat-menu #menuTipoComp="matMenu">
   <button mat-menu-item routerLink="components/tipo_comprobante/nuevo">Registrar</button>
   <button mat-menu-item routerLink="components/tipo_comprobante">Listar</button>
@@ -20,12 +32,52 @@
 <mat-menu #menuUsers="matMenu">
   <button mat-menu-item routerLink="components/usuarios/nuevo">Registrar</button>
   <button mat-menu-item routerLink="components/usuarios">Listar</button>
+=======
+<mat-menu #menuComentarios="matMenu">
+  <button mat-menu-item routerLink="components/comentarios/nuevo" >Registrar</button>
+  <button mat-menu-item routerLink="components/comentarios">Listar</button>
+</mat-menu>
+
+<mat-menu #menuComprobantePago="matMenu">
+  <button mat-menu-item routerLink="components/comprobantePago/nuevo" >Registrar</button>
+  <button mat-menu-item routerLink="components/comprobantePago">Listar</button>
+</mat-menu>
+
+<mat-menu #menuEventos="matMenu">
+  <button mat-menu-item routerLink="components/eventos/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="components/eventos">Listar</button>
+</mat-menu>
+
+<mat-menu #menuULocales="matMenu">
+  <button mat-menu-item routerLink="components/locales/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="components/locales">Listar</button>
+>>>>>>> Stashed changes
 </mat-menu>
 
 <mat-menu #menuRoles="matMenu">
   <button mat-menu-item routerLink="components/roles/nuevo">Registrar</button>
   <button mat-menu-item routerLink="components/roles">Listar</button>
 </mat-menu>
+
+<mat-menu #menuServicios="matMenu">
+  <button mat-menu-item routerLink="components/servicios/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="components/servicios">Listar</button>
+</mat-menu>
+
+<mat-menu #menuTipoComprobante="matMenu">
+  <button mat-menu-item routerLink="components/tipoComprobante/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="components/tipoComprobante">Listar</button>
+</mat-menu>
+
+<mat-menu #menuUsers="matMenu">
+  <button mat-menu-item routerLink="components/users/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="components/users">Listar</button>
+</mat-menu>
+
+<mat-menu #menuReporte="matMenu">
+  <button mat-menu-item routerLink="components/reportes">Listar</button>
+</mat-menu>
+
 
 <mat-menu #menuSalir="matMenu">
   <button mat-menu-item routerLink="/login" (click)="cerrar()">

@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { Servicios } from '../model/Servicios';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+import { Servicios } from '../model/Servicios';
+import { QuantityByServiciosDTO } from '../model/QuantityByServiciosDTO';
+
 
 const base_url =environment.base
-
 @Injectable({
   providedIn: 'root'
 })
 export class ServiciosService {
 
-  private url = `${base_url}/Servicios Disponibles`
+  private url = `${base_url}/servicios`
   private listaCambio = new Subject<Servicios[]>()
 
   constructor(private http:HttpClient) { }
@@ -27,7 +28,6 @@ export class ServiciosService {
 
   insert(per:Servicios){
     let token = sessionStorage.getItem('token');
-
     return this.http.post(this.url,per, {
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
@@ -64,6 +64,15 @@ export class ServiciosService {
   delete(id:number){
     let token = sessionStorage.getItem('token');
     return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
+
+  getSuma(): Observable<QuantityByServiciosDTO[]> {
+    let token = sessionStorage.getItem('token');
+    return this.http.get<QuantityByServiciosDTO[]>(`${this.url}/cantidadServicios`, {
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),

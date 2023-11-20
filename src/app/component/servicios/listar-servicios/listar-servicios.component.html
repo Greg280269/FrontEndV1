@@ -8,28 +8,36 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="servicios" class="container">
     <br />
-    <h2 style="text-align: center">Lista de Servicios</h2>
+    <h2 style="text-align: center" class="title-servicios-lista">Lista de Servicios</h2>
 
+    <mat-form-field>
+      <input matInput (keyup)="filtrar($event)" placeholder="Buscar" />
+    </mat-form-field>
     <div style="text-align: right;">
+<<<<<<< Updated upstream
       <button mat-raised-button color="primary" routerLink="/components/servicio_disponible/nuevo">Nuevo</button>
+=======
+
+      <button mat-raised-button color="primary" routerLink="/components/servicios/nuevo"class="button-insert"><span class="material-icons">add</span> </button>
+>>>>>>> Stashed changes
     </div>
 
-
+<br />
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      
+
       <ng-container matColumnDef="codigo">
         <th mat-header-cell *matHeaderCellDef>Codigo</th>
-        <td mat-cell *matCellDef="let element">{{ element.idSerDisp }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
       </ng-container>
-      
+
 
       <ng-container matColumnDef="nombre">
         <th mat-header-cell *matHeaderCellDef>Nombre</th>
         <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
       </ng-container>
-     
+
 
       <ng-container matColumnDef="descripcion">
         <th mat-header-cell *matHeaderCellDef>Descripcion</th>
@@ -50,12 +58,12 @@
           {{ dispnibilidad(element.estado) }}
         </td>
       </ng-container>
-      
+
       <ng-container matColumnDef="accion01">
-        <th mat-header-cell *matHeaderCellDef>Editar</th>
+        <th mat-header-cell *matHeaderCellDef>Actualizar</th>
         <td mat-cell *matCellDef="let element">
-          <button mat-raised-button color="warn" [routerLink]="['ediciones', element.idSerDisp]">
-            Actualizar
+          <button mat-raised-button [routerLink]="['ediciones', element.id]" class="button-update">
+            <span class="material-icons button-update">autorenew</span>
           </button>
         </td>
       </ng-container>
@@ -63,8 +71,8 @@
       <ng-container matColumnDef="accion02">
         <th mat-header-cell *matHeaderCellDef>Borrar</th>
         <td mat-cell *matCellDef="let element">
-          <button mat-raised-button color="accent" (click)="eliminar(element.idSerDisp)">
-            Eliminar
+          <button mat-raised-button class="button-delete" (click)="eliminar(element.id)">
+            <span class="material-icons">delete_forever</span>
           </button>
         </td>
       </ng-container>

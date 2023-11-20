@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ServiciosComponent } from '../servicios.component';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Servicios } from 'src/app/model/Servicios';
@@ -41,17 +40,17 @@ export class CreaeditaServiciosComponent implements OnInit{
       descripcion:['',Validators.required],
       costo:['',Validators.required],
       estado:['',Validators.required]
-      
+
     });
   }
   Aceptar(){
     if(this.form.valid){
-      this.comp.idSerDisp=this.form.value.id;
+      this.comp.id=this.form.value.id;
       this.comp.nombre=this.form.value.nombre;
       this.comp.descripcion =this.form.value.descripcion;
       this.comp.costo = this.form.value.costo;
       this.comp.estado = this.form.value.estado;
-      
+
 
       if(this.edicion){
         this.ps.update(this.comp).subscribe(()=>{
@@ -67,13 +66,17 @@ export class CreaeditaServiciosComponent implements OnInit{
           });
         });
       }
+<<<<<<< Updated upstream
       this.router.navigate(['/components/servicio_disponible']);
+=======
+      this.router.navigate(['components/servicios']);
+>>>>>>> Stashed changes
     } else{
       this.mensaje='Complete todos los campos, revise!!';
     }
   }
   obtenerControlCampo(nombreCampo:string): AbstractControl{
-    const control = this.form.get(nombreCampo);  
+    const control = this.form.get(nombreCampo);
     if(!control){
       throw new Error (`Control no encontrado para el campo ${nombreCampo}`);
     }
@@ -83,7 +86,7 @@ export class CreaeditaServiciosComponent implements OnInit{
     if (this.edicion) {
       this.ps.listId(this.idF).subscribe((data) => {
         this.form = new FormGroup({
-          id: new FormControl(data.idSerDisp),
+          id: new FormControl(data.id),
           nombre: new FormControl(data.nombre),
           descripcion: new FormControl(data.descripcion),
           costo: new FormControl(data.costo),

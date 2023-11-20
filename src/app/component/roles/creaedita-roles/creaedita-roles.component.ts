@@ -53,9 +53,9 @@ export class CreaeditaRolesComponent implements OnInit{
     if(this.form.valid){
       this.comp.id=this.form.value.id;
       this.comp.rol=this.form.value.rol;
-      this.comp.user.idUser =this.form.value.person;
-      
-      
+      this.comp.idUsuario.id =this.form.value.person;
+
+
 
       if(this.edicion){
         this.ps.update(this.comp).subscribe(()=>{
@@ -71,13 +71,17 @@ export class CreaeditaRolesComponent implements OnInit{
           });
         });
       }
+<<<<<<< Updated upstream
       this.router.navigate(['/components/roles']);
+=======
+      this.router.navigate(['components/roles']);
+>>>>>>> Stashed changes
     } else{
       this.mensaje='Complete todos los campos, revise!!';
     }
   }
   obtenerControlCampo(nombreCampo:string): AbstractControl{
-    const control = this.form.get(nombreCampo);  
+    const control = this.form.get(nombreCampo);
     if(!control){
       throw new Error (`Control no encontrado para el campo ${nombreCampo}`);
     }
@@ -89,8 +93,8 @@ export class CreaeditaRolesComponent implements OnInit{
         this.form = new FormGroup({
           id: new FormControl(data.id),
           rol: new FormControl(data.rol),
-          person: new FormControl(data.user),
-          
+          person: new FormControl(data.idUsuario),
+
         });
       });
     }

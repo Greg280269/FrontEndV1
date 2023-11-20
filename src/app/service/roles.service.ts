@@ -1,9 +1,11 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 import { Roles } from '../model/Roles';
-const base_url = environment.base
+
+
+const base_url =environment.base
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +15,7 @@ export class RolesService {
   private listaCambio = new Subject<Roles[]>()
 
   constructor(private http:HttpClient) { }
+
   list(){
     let token = sessionStorage.getItem('token');
     return this.http.get<Roles[]>(this.url, {
@@ -32,7 +35,6 @@ export class RolesService {
   }
 
   setList(listaNueva:Roles[]){
-    
     this.listaCambio.next(listaNueva);
   }
 

@@ -12,15 +12,15 @@ import { ServiciosService } from 'src/app/service/servicios.service';
 export class ListarServiciosComponent {
   dataSource: MatTableDataSource<Servicios> = new MatTableDataSource()
   displayedColumns: string[] = [
-    'codigo', 
-    'nombre', 
+    'codigo',
+    'nombre',
     'descripcion',
     'costo',
     'estado',
     'accion01',
     'accion02'
 
-    
+
   ];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -34,7 +34,7 @@ export class ListarServiciosComponent {
     this.pS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
-    }); 
+    });
   }
 
   eliminar(id: number){
@@ -53,4 +53,9 @@ export class ListarServiciosComponent {
       return "No disponible"
     }
   }
+
+  filtrar(e: any) {
+    this.dataSource.filter = e.target.value.trim();
+  }
+
 }

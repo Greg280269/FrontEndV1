@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-import { BrowserModule } from '@angular/platform-browser';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ListarComentariosComponent } from './comentarios/listar-comentarios/listar-comentarios.component';
+import { CreaeditaComentariosComponent } from './comentarios/creaedita-comentarios/creaedita-comentarios.component';
 import { MatTableModule } from '@angular/material/table';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatSelectModule} from '@angular/material/select';
@@ -17,20 +15,26 @@ import{MatIconModule} from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input'
-
-
 import { ComponentRoutingModule } from './component-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from '../app.component';
-import { CreaeditaComprobanteComponent } from './comprobante/creaedita-comprobante/creaedita-comprobante.component';
-import { ServiciosComponent } from './servicios/servicios.component';
-import { ListarServiciosComponent } from './servicios/listar-servicios/listar-servicios.component';
-import { CreaeditaServiciosComponent } from './servicios/creaedita-servicios/creaedita-servicios.component';
-import { UsersComponent } from './users/users.component';
-import { ListarUsersComponent } from './users/listar-users/listar-users.component';
-import { CreaeditaUsersComponent } from './users/creaedita-users/creaedita-users.component';
+import { ComentariosComponent } from './comentarios/comentarios.component';
+import { ComprobantepagoComponent } from './comprobantepago/comprobantepago.component';
+import { EventosComponent } from './eventos/eventos.component';
+import { LocalesComponent } from './locales/locales.component';
 import { RolesComponent } from './roles/roles.component';
+import { ServiciosComponent } from './servicios/servicios.component';
+import { TipocomprobanteComponent } from './tipocomprobante/tipocomprobante.component';
+import { UsersComponent } from './users/users.component';
+import { ListarComprobantepagoComponent } from './comprobantepago/listar-comprobantepago/listar-comprobantepago.component';
+import { CreaeditaComprobantepagoComponent } from './comprobantepago/creaedita-comprobantepago/creaedita-comprobantepago.component';
+import { ListarEventosComponent } from './eventos/listar-eventos/listar-eventos.component';
+import { CreaeditaEventosComponent } from './eventos/creaedita-eventos/creaedita-eventos.component';
+import { ListarLocalesComponent } from './locales/listar-locales/listar-locales.component';
+import { CreaeditaLocalesComponent } from './locales/creaedita-locales/creaedita-locales.component';
 import { ListarRolesComponent } from './roles/listar-roles/listar-roles.component';
 import { CreaeditaRolesComponent } from './roles/creaedita-roles/creaedita-roles.component';
+<<<<<<< Updated upstream
 import { ComprobanteComponent } from './comprobante/comprobante.component';
 import { ListarComprobanteComponent } from './comprobante/listar-comprobante/listar-comprobante.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -38,23 +42,53 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 
+=======
+import { ListarServiciosComponent } from './servicios/listar-servicios/listar-servicios.component';
+import { CreaeditaServiciosComponent } from './servicios/creaedita-servicios/creaedita-servicios.component';
+import { ListarTipocomprobanteComponent } from './tipocomprobante/listar-tipocomprobante/listar-tipocomprobante.component';
+import { CreaeditaTipocomprobanteComponent } from './tipocomprobante/creaedita-tipocomprobante/creaedita-tipocomprobante.component';
+import { ListarUsersComponent } from './users/listar-users/listar-users.component';
+import { CreaeditaUsersComponent } from './users/creaedita-users/creaedita-users.component';
+import {MatCardModule} from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { ReporteComponent } from './reporte/reporte.component';
+import { Reporte01Component } from './reporte/reporte01/reporte01.component';
+import { NgChartsModule } from 'ng2-charts';
+>>>>>>> Stashed changes
 
 
 @NgModule({
   declarations: [
-    ComprobanteComponent,
-    ListarComprobanteComponent,
-    CreaeditaComprobanteComponent,
-    ServiciosComponent,
-    ListarServiciosComponent,
-    CreaeditaServiciosComponent,
-    UsersComponent,
-    ListarUsersComponent,
-    CreaeditaUsersComponent,
+    ListarComentariosComponent,
+    CreaeditaComentariosComponent,
+    ComentariosComponent,
+    ComprobantepagoComponent,
+    EventosComponent,
+    LocalesComponent,
     RolesComponent,
+    ServiciosComponent,
+    TipocomprobanteComponent,
+    UsersComponent,
+    ListarComprobantepagoComponent,
+    CreaeditaComprobantepagoComponent,
+    ListarEventosComponent,
+    CreaeditaEventosComponent,
+    ListarLocalesComponent,
+    CreaeditaLocalesComponent,
     ListarRolesComponent,
     CreaeditaRolesComponent,
+<<<<<<< Updated upstream
     
+=======
+    ListarServiciosComponent,
+    CreaeditaServiciosComponent,
+    ListarTipocomprobanteComponent,
+    CreaeditaTipocomprobanteComponent,
+    ListarUsersComponent,
+    CreaeditaUsersComponent,
+    ReporteComponent,
+    Reporte01Component,
+>>>>>>> Stashed changes
   ],
   imports: [
     CommonModule,
@@ -74,7 +108,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
-  ],
+    MatCardModule,
+    MatGridListModule,
+    NgChartsModule
+  ]
+  ,
   providers: [],
   bootstrap: [AppComponent]
 })

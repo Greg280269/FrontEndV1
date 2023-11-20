@@ -11,7 +11,7 @@
     <div class="container" style="text-align: center;">
         <h2>Registro de Servicios</h2>
         <form [formGroup]="form" (submit)="Aceptar()" class="example-form">
-            
+
             <mat-form-field class="example-full-width" *ngIf="edicion">
                 <mat-label>Id</mat-label>
                 <input matInput placeholder="Id" formControlName="id" />
@@ -59,12 +59,16 @@
             </mat-form-field>
             <br />
 
-            
 
-           
+
+
 
             <button mat-raised-button color="primary">Aceptar</button>
+<<<<<<< Updated upstream
             <button mat-raised-button color="warn" routerLink="/components/servicio_disponible">
+=======
+            <button mat-raised-button color="warn" routerLink="/components/servicios">
+>>>>>>> Stashed changes
                 Cancelar
             </button>
             <p>{{ mensaje }}</p>
